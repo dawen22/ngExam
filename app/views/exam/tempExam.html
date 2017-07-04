@@ -2,21 +2,21 @@
 <div class="container">
   <md-card style="background-color: #f5f5f5;">
     <h3 align="center">{{examType}}</h3>
-  <div class="container-fluid" ng-if="!begin" ng-if="!score">
+  <div class="container-fluid" ng-hide="ins">
   <md-card>
   <p layout-margin align="center" ng-repeat="ins in Instructions" >{{ins.ins}}</p>
   </md-card>
-  <center><md-button class="md-raised md-primary" type="submit" ng-click="startexam()">Begin</md-button></center>
+  <center><md-button class="md-raised md-primary" type="submit" ng-click="begin()">Begin</md-button></center>
   </div>
   <br>
-    <div class="col-md-12" ng-if="score" ng-if="begin" >
-      <div ng-repeat="question in questions  | limitTo: 1 " >
+    <div class="col-md-12" ng-show="question">
+      <div>
       <md-card>
         <div layout-margin>
-          <p>{{$index + 1}}. {{question.questionText}}</p>
+          <p>{{id + 1}}) {{question.questionText}}</p>
           <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
           <div ng-repeat="answer in question.answers">
-            <input type="radio" ng-model="answers[$parent.$index]" value="{{ answer.answerText }}"/> {{ answer.answerText }}
+            <input type="radio" ng-model="answers[$parent.$index]" value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
 
 		      </div>
         </div>
@@ -24,16 +24,13 @@
       </div>
 
     <center>
-      <!-- <md-button class="md-raised md-primary" type="submit" ng-model="showResult()" ng-click="endexam()">Submit</md-button> -->
       <md-button class="md-raised md-primary" type="submit" ng-model="" ng-click="">Prev</md-button>
-      <!-- <md-button ng-repeat="question in questions" type="submit" ng-model="" ng-click=""> {{$index + 1}} </md-button> -->
-      <md-button class="md-raised md-primary" type="submit"  ng-click="next()">Next</md-button>{{question}}
-
+      <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button> {{userAnswer}}
+      <md-button class="md-raised md-primary" type="submit" ng-click="result()">Submit</md-button>{{id}}
     </center>
-    </div>
-<div class="container-fluid" ng-if="result">
+<div class="container-fluid" ng-show="result">
 <md-card>
-<h4 layout-margin align="center">Your score: {{ correctCount }} / {{questions.length}}</h4>
+<h4 layout-margin align="center">Your score: {{ correctCount }} / {{questions.length}}</h4>{{correctCount}}
 </md-card>
 </div>
 </md-card>
