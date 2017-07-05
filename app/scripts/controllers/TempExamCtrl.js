@@ -126,27 +126,21 @@ angular.module('ngmaterialApp')
       if (i <= $scope.questions.length) {
 				$scope.question = $scope.questions[i];
       }
+      else {
+        $scope.result = true;
+      }
     };
   $scope.answers ={};
-  $scope.result = function() {
+  $scope.getCorrect = function() {
     var i = $scope.id;
-    var qLength = $scope.questions.length;
-
-    $scope.bag = $scope.questions[i];
-      var answers = $scope.bag.answers;
-
-
-      $scope.bag.userAnswer = $scope.answers[i];
-      for(var j=0;j<answers.length;j++){
-        if ($scope.bag.userAnswer === answers[j].answerText && answers[j].correct===true){
-          $scope.bag.userAnswerCorrect = true;
+    $scope.main = $scope.questions[i];
+      var array = $scope.main.answers;
+      $scope.main.userAnswer = $scope.answers.undefined;
+      for(var j=0;j<array.length;j++){
+        if ($scope.main.userAnswer === array[j].answerText && array[j].correct===true){
+          $scope.main.userAnswerCorrect = true;
           $scope.correctCount++;
         }
       }
-
-
-  };
-
-
-  // ===========================================================================================================================================
+   };
 });

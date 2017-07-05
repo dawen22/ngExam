@@ -24,22 +24,13 @@
       </div>
 
     <center>
-      <md-button class="md-raised md-primary" type="submit" ng-model="" ng-click="">Prev</md-button>
       <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button> {{userAnswer}}
-      <md-button class="md-raised md-primary" type="submit" ng-click="result()">Submit</md-button>{{id}}
+      <md-button class="md-raised md-primary" type="submit" ng-click="getCorrect()">Submit</md-button>{{id}}
     </center>
-<div class="container-fluid" ng-show="result">
+<div class="container-fluid">
 <md-card>
-<h4 layout-margin align="center">Your score: {{ correctCount }} / {{questions.length}}</h4>{{correctCount}}
+<h4 layout-margin align="center">Your score: {{ correctCount }} / {{questions.length}}</h4>
 </md-card>
 </div>
 </md-card>
 </div>
-
-<!-- ======================================================================================================================================================= -->
-
-
-<!-- <div ng-repeat="question in questions">
-  <p>{{$index + 1}}. {{question.questionText}}</p>
-</div>
-<md-button class="md-raised md-primary" type="submit" ng-model="next">Next</md-button> -->
