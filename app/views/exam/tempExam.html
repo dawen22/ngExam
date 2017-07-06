@@ -16,8 +16,11 @@
           <p>{{id + 1}}) {{question.questionText}}</p>
           <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
           <div ng-repeat="answer in question.answers">
-            <input type="radio" ng-model="answers[$parent.$index]" value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
 
+            <md-radio-group ng-model="answers[$parent.$index]">
+            <md-radio-button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
+          </md-radio-button>
+            </md-radio-group>
 		      </div>
         </div>
       </md-card>
