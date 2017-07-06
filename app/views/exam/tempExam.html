@@ -1,15 +1,14 @@
-
 <div class="container">
   <md-card style="background-color: #f5f5f5;">
-    <h3 align="center">{{examType}}</h3>
+    <h3 align="center">{{Clerical.examType}}</h3>
   <div class="container-fluid" ng-hide="ins">
   <md-card>
-  <p layout-margin align="center" ng-repeat="ins in Instructions" >{{ins.ins}}</p>
+  <p layout-margin align="center" ng-repeat="instruction in Clerical.instructions" >{{instruction.ins}}</p>
   </md-card>
   <center><md-button class="md-raised md-primary" type="submit" ng-click="begin()">Begin</md-button></center>
   </div>
   <br>
-    <div class="col-md-12" ng-show="question">
+    <div class="col-md-12" ng-if="question">
       <div>
       <md-card>
         <div layout-margin>
@@ -24,12 +23,12 @@
       </div>
 
     <center>
-      <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button> {{userAnswer}}
-      <md-button class="md-raised md-primary" type="submit" ng-click="getCorrect()">Submit</md-button>{{id}}
+      <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button>
     </center>
-<div class="container-fluid">
+    </div>
+<div class="container-fluid" ng-show="result">
 <md-card>
-<h4 layout-margin align="center">Your score: {{ correctCount }} / {{questions.length}}</h4>
+<h4 layout-margin align="center">Your score: {{ correctCount }} / {{Clerical.questions.length}}</h4>
 </md-card>
 </div>
 </md-card>

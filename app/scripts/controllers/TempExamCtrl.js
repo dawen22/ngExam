@@ -2,19 +2,21 @@
 
 /**
  * @ngdoc function
- * @name ngmaterialApp.controller:NonvoiceCtrl
+ * @name ngmaterialApp.controller:TempExamCtrl
  * @description
- * # NonvoiceCtrl
+ * # TempExamCtrl
  * Controller of the ngmaterialApp
  */
 angular.module('ngmaterialApp')
 .controller('TempExamCtrl', function($scope) {
-  $scope.examType = "Mixed Verbal Aptitude"
-  $scope.Instructions = [{"ins":"This test consists of 14 mixed verbal aptitude question, you have 10 minutes to complete the test"},
-      {"ins":"When you are ready to start, click 'Begin' to start the test"}
-      ];
-  $scope.questions = [
-        {"questionText": "Another word for 'excluding something or someone' could be:", "answers": [
+  $scope.Clerical =
+        {"examType": "Mixed Verbal Aptitude",
+        "instructions": [
+          {"ins":"This test consists of 14 mixed verbal aptitude question, you have 10 minutes to complete the test"},
+          {"ins":"When you are ready to start, click 'Begin' to start the test"}],
+        "questions":  [
+        {"questionText": "Another word for 'excluding something or someone' could be:",
+         "answers": [
           {"answerText":"Succession", "correct": false},
           {"answerText":"Submission", "correct": false},
           {"answerText":"Omission", "correct": true},
@@ -105,10 +107,12 @@ angular.module('ngmaterialApp')
           {"answerText":"D,C,A,B", "correct": false},
           {"answerText":"C,A,B,D", "correct": false}
           ]}
-      ];
+      ]};
+
   $scope.question = false;
   $scope.result = false;
   $scope.correctCount = 0;
+  $scope.test = $scope.Clerical.examType;
 
   $scope.begin = function(){
       $scope.id = 0;
@@ -117,28 +121,30 @@ angular.module('ngmaterialApp')
       };
 
   $scope.next = function() {
+      $scope.getCorrect();
       $scope.id++;
 		  $scope.getQuestion();
       };
 
   $scope.getQuestion = function() {
 			var i = $scope.id;
-      if (i <= $scope.questions.length) {
-				$scope.question = $scope.questions[i];
+      if (i < $scope.Clerical.questions.length) {
+				$scope.question = $scope.Clerical.questions[i];
       }
       else {
         $scope.result = true;
-      }
-    };
+        $scope.question = false;
+        }
+      };
+
   $scope.answers ={};
   $scope.getCorrect = function() {
     var i = $scope.id;
-    $scope.main = $scope.questions[i];
+    $scope.main = $scope.Clerical.questions[i];
       var array = $scope.main.answers;
       $scope.main.userAnswer = $scope.answers.undefined;
       for(var j=0;j<array.length;j++){
-        if ($scope.main.userAnswer === array[j].answerText && array[j].correct===true){
-          $scope.main.userAnswerCorrect = true;
+        if ($scope.main.userAnswer === array[j].answerText && array[j].correct === true) {
           $scope.correctCount++;
         }
       }
