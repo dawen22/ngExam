@@ -5,7 +5,7 @@
 
 <!-- Instruction -->
     <div class="row">
-       <div class="col s12 m8 offset-m2">
+       <div class="col s12 m8 offset-m2 wow slideInDown">
          <div class="card-panel">
            <span class="white-black">
                 <h3 align="center">{{Clerical.examType}}</h3>
@@ -33,6 +33,7 @@
         <div layout-margin> -->
         <div class="row">
             <div class="col s12 m8 offset-m2" ng-if="question">
+              <div class="wow slideInDown">
               <div class="card-panel">
                 <p>{{id + 1}}) {{question.questionText}}</p>
                 <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
@@ -43,13 +44,12 @@
                   </md-radio-button>
                   </md-radio-group>
 
-
-
 		            </div>
                 <center>
                   <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button>
                 </center>
               </div> <!-- card panel -->
+              </div>
             </div> <!-- col -->
         </div> <!-- row -->
         <!-- </div>
