@@ -150,3 +150,6 @@ angular.module('ngmaterialApp')
       }
    };
 });
+
+// WOW.JS
+new WOW().init();

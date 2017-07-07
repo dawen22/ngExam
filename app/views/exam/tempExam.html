@@ -1,39 +1,76 @@
 <div class="container">
-  <md-card style="background-color: #f5f5f5;">
-    <h3 align="center">{{Clerical.examType}}</h3>
+  <!-- <md-card style="background-color: #f5f5f5;"> -->
+    <!-- <h3 align="center">{{Clerical.examType}}</h3> -->
   <div class="container-fluid" ng-hide="ins">
-  <md-card>
+
+<!-- Instruction -->
+    <div class="row">
+       <div class="col s12 m8 offset-m2 wow slideInDown">
+         <div class="card-panel">
+           <span class="white-black">
+                <h3 align="center">{{Clerical.examType}}</h3>
+                <hr>
+                 <p layout-margin align="center" ng-repeat="instruction in Clerical.instructions" >{{instruction.ins}}</p>
+                <hr>
+                <center><md-button class="md-raised md-primary" type="submit" ng-click="begin()">Begin</md-button></center>
+           </span>
+         </div>
+       </div>
+     </div>
+
+
+  <!-- <md-card style="border:1px solid red;">
   <p layout-margin align="center" ng-repeat="instruction in Clerical.instructions" >{{instruction.ins}}</p>
-  </md-card>
-  <center><md-button class="md-raised md-primary" type="submit" ng-click="begin()">Begin</md-button></center>
+  </md-card> -->
+
+  <!-- <center><md-button class="md-raised md-primary" type="submit" ng-click="begin()">Begin</md-button></center> -->
   </div>
+
   <br>
-    <div class="col-md-12" ng-if="question">
-      <div>
-      <md-card>
-        <div layout-margin>
-          <p>{{id + 1}}) {{question.questionText}}</p>
-          <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
-          <div ng-repeat="answer in question.answers">
+    <!-- <div class="col-md-12" ng-if="question"> -->
+      <!-- <div> -->
+      <!-- <md-card>
+        <div layout-margin> -->
+        <div class="row">
+            <div class="col s12 m8 offset-m2" ng-if="question">
+              <div class="wow slideInDown">
+              <div class="card-panel">
+                <p>{{id + 1}}) {{question.questionText}}</p>
+                <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
+                <div ng-repeat="answer in question.answers">
 
-            <md-radio-group ng-model="answers[$parent.$index]" ng-click="next()">
-            <md-radio-button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
-            </md-radio-button>
-            </md-radio-group>
+                  <md-radio-group ng-model="answers[$parent.$index]">
+                  <md-radio-button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
+                  </md-radio-button>
+                  </md-radio-group>
 
-		      </div>
-        </div>
-      </md-card>
-      </div>
+		            </div>
+                <center>
+                  <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button>
+                </center>
+              </div> <!-- card panel -->
+              </div>
+            </div> <!-- col -->
+        </div> <!-- row -->
+        <!-- </div>
+      </md-card> -->
+      <!-- </div> -->
 
-    <center>
+    <!-- <center>
       <md-button class="md-raised md-primary" type="submit" ng-click="next()">Next</md-button>
-    </center>
+    </center> -->
+    <!-- </div> -->
+
+<!-- <div class="container-fluid" ng-show="result"> -->
+<div class="row" ng-show="result">
+  <div class="col s12 m6 offset-m3">
+    <div class="card-panel">
+      <span class="white-black">
+        <h4 layout-margin align="center">Your score: {{ correctCount }} / {{Clerical.questions.length}}</h4>
+      </span>
     </div>
-<div class="container-fluid" ng-show="result">
-<md-card>
-<h4 layout-margin align="center">Your score: {{ correctCount }} / {{Clerical.questions.length}}</h4>
-</md-card>
+  </div>
+<!-- </div> -->
+<!-- </md-card> -->
 </div>
-</md-card>
 </div>
