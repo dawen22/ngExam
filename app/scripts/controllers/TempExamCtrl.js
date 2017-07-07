@@ -43,8 +43,8 @@ angular.module('ngmaterialApp')
         {"questionText": "An operation to remove a patient's entire stomach is called a total gastrectomy. during the procedure, the surgeon connects the esophagus - the tube that runs between the thoat and the stomach - to the small intestine. This means the person will still have a working digestive system afterwards. But a patient who has had a gastrectomy may need to alter their diet, such as by eating frequent small meals rather than three large meals a day. From this passage it can be concluded that:", "answers": [
           {"answerText":"A gastrectomy is done to help a person lose weight.", "correct": false},
           {"answerText":"The stomach isn't a part of the digestive system.", "correct": false},
-          {"answerText":"A person with no stomach can no longer eat normal food", "correct": true},
-          {"answerText":"A person can live an almost normal life without a stomach", "correct": false}
+          {"answerText":"A person with no stomach can no longer eat normal food", "correct": false},
+          {"answerText":"A person can live an almost normal life without a stomach", "correct": true}
           ]},
         {"questionText": "Peter, Stuart, Michael, John and Colin all have their own single tents to go to camp. Michael and Peter have sewn-in groundsheets as well as plastic sheets for the ground. The others only have plastic sheets for the ground. Peter and John have nylon tents. The others have canvas tents Peter and Colin have zippers with their tents, while the others have drawings. How mamy have plastic sheets in tents that are not made of canvas nad have no zippers?", "answers": [
           {"answerText":"2", "correct": false},
@@ -89,7 +89,7 @@ angular.module('ngmaterialApp')
           {"answerText":"some", "correct": true}
           ]},
         {"questionText": "Minute is to time as mile is to:", "answers": [
-          {"answerText":"Distanace", "correct": true},
+          {"answerText":"Distance", "correct": true},
           {"answerText":"Travel", "correct": false},
           {"answerText":"Short", "correct": false},
           {"answerText":"Far", "correct": false}
@@ -145,7 +145,7 @@ angular.module('ngmaterialApp')
       $scope.main.userAnswer = $scope.answers.undefined;
       for(var j=0;j<array.length;j++){
         if ($scope.main.userAnswer === array[j].answerText && array[j].correct === true) {
-          $scope.correctCount++;
+          $scope.correctCount++;//*comment*//
         }
       }
    };
