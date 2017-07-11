@@ -11,92 +11,325 @@ angular.module('ngmaterialApp')
 .controller('TempExamCtrl', function($scope) {
 
   $scope.clerical = [
-    {"exam": "test1",
-     "ins": "answer all",
+    {"exam": "Alphabetical and Numerical Filing",
+     "ins": "You are first to sort names and company names according to alphabetic filing, later you are to sort numerical sequences according to numerical filing.",
      "questions": [
-       {"questionText": "(test1)Why is the sky blue?",
+       {"questionText": "Name: Johnson, John",
+        "questionSub": [
+         {"questionText1": "A) ->"},
+         {"questionText1": " Johnson, Manny"},
+         {"questionText1": "B) ->"},
+         {"questionText1": " Johnson, Mark"},
+         {"questionText1": "C) ->"},
+         {"questionText1": " Johnson, Nole"},
+         {"questionText1": "D) ->"}
+         ],
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"A", "correct": true},
+         {"answerText":"B", "correct": false},
+         {"answerText":"C", "correct": false},
+         {"answerText":"D", "correct": false}
          ]},
-       {"questionText": "Why is the meaning of life?",
+       {"questionText": "Name: Lowen, Peter",
+        "questionSub": [
+         {"questionText1": "A) ->"},
+         {"questionText1": " Lowen, Pat"},
+         {"questionText1": "B) ->"},
+         {"questionText1": " Lowen, Paul"},
+         {"questionText1": "C) ->"},
+         {"questionText1": " Lowen, Poppe"},
+         {"questionText1": "D) ->"}
+         ],
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"A", "correct": false},
+         {"answerText":"B", "correct": false},
+         {"answerText":"C", "correct": true},
+         {"answerText":"D", "correct": false}
          ]},
-       {"questionText": "How many pennies are in $10.00?",
+       {"questionText": "Huggi, Lilly",
+        "questionSub": [
+         {"questionText1": "A) ->"},
+         {"questionText1": "Hough, Eva"},
+         {"questionText1": "B) ->"},
+         {"questionText1": "Howard, Flora"},
+         {"questionText1": "C) ->"},
+         {"questionText1": "Hvadd, Berta"},
+         {"questionText1": "D) ->"}
+         ],
         "answers": [
-         {"answerText":"1,000.", "correct": true},
-         {"answerText":"10,000.", "correct": false},
-         {"answerText":"A lot", "correct": false}
+         {"answerText":"A", "correct": false},
+         {"answerText":"B", "correct": false},
+         {"answerText":"C", "correct": true},
+         {"answerText":"D", "correct": false}
          ]},
-       {"questionText": "What is the default program?",
+        {"questionText": "Flasnk, Lilly",
+         "questionSub": [
+           {"questionText1": "A) ->"},
+           {"questionText1": "Hull, Eva"},
+           {"questionText1": "B) ->"},
+           {"questionText1": "Muni, Flora"},
+           {"questionText1": "C) ->"},
+           {"questionText1": "Swan, Berta"},
+           {"questionText1": "D) ->"}
+           ],
+          "answers": [
+           {"answerText":"A", "correct": true},
+           {"answerText":"B", "correct": false},
+           {"answerText":"C", "correct": false},
+           {"answerText":"D", "correct": false}
+           ]},
+          {"questionText": "Oli, Lars",
+           "questionSub": [
+             {"questionText1": "A) ->"},
+             {"questionText1": "Olim, Laab"},
+             {"questionText1": "B) ->"},
+             {"questionText1": "Ollo, Loom"},
+             {"questionText1": "C) ->"},
+             {"questionText1": "Olz, Lalb"},
+             {"questionText1": "D) ->"}
+             ],
+            "answers": [
+             {"answerText":"A", "correct": true},
+             {"answerText":"B", "correct": false},
+             {"answerText":"C", "correct": false},
+             {"answerText":"D", "correct": false}
+             ]},
+          {"questionText": "P'lane, Bob",
+           "questionSub": [
+             {"questionText1": "A) ->"},
+             {"questionText1": "Plaan, Eva"},
+             {"questionText1": "B) ->"},
+             {"questionText1": "Plain, Lisa"},
+             {"questionText1": "C) ->"},
+             {"questionText1": "Plown, Poul"},
+             {"questionText1": "D) ->"}
+             ],
+            "answers": [
+             {"answerText":"A", "correct": true},
+             {"answerText":"B", "correct": false},
+             {"answerText":"C", "correct": false},
+             {"answerText":"D", "correct": false}
+          ]},
+          {"questionText": "If the names Peter Greys, Sven Elroy, [Lisette Happy] and John Camelot were arranged for alpahabetical filing, the position of the name in [brackets] would be ____________.",
+            "answers": [
+             {"answerText":"Second", "correct": true},
+             {"answerText":"First", "correct": false},
+             {"answerText":"Third", "correct": false},
+             {"answerText":"Fouth", "correct": false}
+          ]},
+          {"questionText": "If the names Happy Travels, Awesome Furniture, [Lowrider Cars] and Flash Shipping were arranged filing, the position of the name in [brackets] would be ____________.",
+           "answers": [
+             {"answerText":"Second", "correct": false},
+             {"answerText":"First", "correct": false},
+             {"answerText":"Third", "correct": false},
+             {"answerText":"Fouth", "correct": true}
+          ]},
+          {"questionText": "If the names Fling, [101 Communications], ABAB and Uniflow were arranged for alphabetical filing, the position of the name in [brackets] would be _______________.",
+           "answers": [
+             {"answerText":"First", "correct": true},
+             {"answerText":"Second", "correct": false},
+             {"answerText":"Third", "correct": false},
+             {"answerText":"Fouth", "correct": false}
+          ]},
+
+       {"questionText": "If the company names [Jordina], Loom, Glowtastic and Pouty were arranged for alphabetical filing. the position of the name in [brackets] would be ________________.",
         "answers": [
-         {"answerText":"Hello World.", "correct": true},
-         {"answerText":"Hello Sunshine.", "correct": false},
-         {"answerText":"Hello my ragtime gal.", "correct": false}
+          {"answerText":"Second", "correct": true},
+          {"answerText":"First", "correct": false},
+          {"answerText":"Third", "correct": false},
+          {"answerText":"Fouth", "correct": false}
          ]}
     ]},
-    {"exam": "test2",
-     "ins": "true or false",
+    {"exam": "Attention to Detail",
+     "ins": "You are presented with three names, numbers, or addresses. You have to determine whether one of these are different from the other two, or if there is no difference between the three.",
      "questions": [
-       {"questionText": "(test2)Why is the sky blue?",
+       {"questionText": "Which is different from the other two?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"Multzi Zoloene Frankiri", "correct": true},
+         {"answerText":"Multizi Zoloene Frankiri", "correct": false},
+         {"answerText":"Multzi Zoloene Frankiri", "correct": false},
+         {"answerText":"No difference", "correct": false}
          ]},
-       {"questionText": "Why is the meaning of life?",
+       {"questionText": "Which is different from the other two?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"INDUTRILANA GRANDE MANILI", "correct": true},
+         {"answerText":"INDUSTRILANA GRANDE MANILI", "correct": false},
+         {"answerText":"No difference", "correct": false},
+         {"answerText":"INDUSTRILANA GRANDE MANILI", "correct": false}
          ]},
-       {"questionText": "How many pennies are in $10.00?",
+       {"questionText": "Which is different from the other two?",
         "answers": [
-         {"answerText":"1,000.", "correct": true},
-         {"answerText":"10,000.", "correct": false},
-         {"answerText":"A lot", "correct": false}
+         {"answerText":"Norra Larsmovagen 53", "correct": true},
+         {"answerText":"Norra Larsmovagan 53", "correct": false},
+         {"answerText":"No difference", "correct": false},
+         {"answerText":"Nora Larmovagen 53", "correct": false}
          ]},
-       {"questionText": "What is the default program?",
+       {"questionText": "Which is different from the other two?",
         "answers": [
-         {"answerText":"Hello World.", "correct": true},
-         {"answerText":"Hello Sunshine.", "correct": false},
-         {"answerText":"Hello my ragtime gal.", "correct": false}
-         ]}
-    ]},
-    {"exam": "test3",
-     "ins": "asdasda",
+         {"answerText":"Max Liisberg Pollulanaski", "correct": true},
+         {"answerText":"Max Liisberg Pollulanaski", "correct": false},
+         {"answerText":"Max Liisberg Pollulanski", "correct": false},
+         {"answerText":"No difference", "correct": false}
+       ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"GI. Sygehusvej 103 Narsaq", "correct": true},
+         {"answerText":"GI. Sygehusvej 103, Narsaq", "correct": false},
+         {"answerText":"GI. Sygehusvej 103, Narsaq", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"Rua Luz, 1630 Belo Horizonte-MG", "correct": true},
+         {"answerText":"Rua Luz, 1620 Belo Horizonte-MG", "correct": false},
+         {"answerText":"Rua Luz, 1630 Belo Horizonte-MG", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"Danholdings dento-trax", "correct": true},
+         {"answerText":"Danholdins dento-trax", "correct": false},
+         {"answerText":"Danholdings dento-trax", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"No difference", "correct": true},
+         {"answerText":"878968 897857", "correct": false},
+         {"answerText":"878968 897857", "correct": false},
+         {"answerText":"878968 897857", "correct": false}
+       ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"No difference", "correct": true},
+         {"answerText":"Lars Lamonen Larsson", "correct": false},
+         {"answerText":"Lars Lamonen Larsson", "correct": false},
+         {"answerText":"Lars Lamonen Larsson", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"Kerkkolankatu 22 RAISIO", "correct": true},
+         {"answerText":"Kerkkolankatu 22 RAISIO", "correct": false},
+         {"answerText":"No difference", "correct": false},
+         {"answerText":"Kerkkolankatu 22 RAISIO", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"90, place Maurice-Charretier", "correct": true},
+         {"answerText":"90, place Maurice-Charretier", "correct": false},
+         {"answerText":"No difference", "correct": false},
+         {"answerText":"90, place Maurice-Charretier", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"000029378398763", "correct": true},
+         {"answerText":"No difference", "correct": false},
+         {"answerText":"0000029378398763", "correct": false},
+         {"answerText":"000029378398763", "correct": false}
+       ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"98984832 32452", "correct": true},
+         {"answerText":"98984832 32452", "correct": false},
+         {"answerText":"98984032 32452", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"Olympus Florlumini Platinina", "correct": true},
+         {"answerText":"Olympus Florlumini Platinina", "correct": false},
+         {"answerText":"Olympus Florlumini Platinina", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       {"questionText": "Which is different from the other two?",
+        "answers": [
+         {"answerText":"ALDEIA DOS CHAOS", "correct": true},
+         {"answerText":"ALDEIA DOS CHAOS", "correct": false},
+         {"answerText":"ALDEIA DUS CHAOS", "correct": false},
+         {"answerText":"No difference", "correct": false}
+         ]},
+       ]},
+    {"exam": "Workload/Concentration",
+     "ins": "You are to answer what may seem like short and simple questions.",
      "questions": [
-       {"questionText": "(test3)Why is the sky blue?",
+       {"questionText": "Bree is shorter than Daniel, who is the shortest?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"Bree", "correct": true},
+         {"answerText":"Daniel", "correct": false}
          ]},
-       {"questionText": "Why is the meaning of life?",
+       {"questionText": "Luna is nicer than Flora, who is the nicest?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"Luna", "correct": true},
+         {"answerText":"Flora", "correct": false}
          ]},
-       {"questionText": "How many pennies are in $10.00?",
+       {"questionText": "Mike is less than Frank, who is less ?",
         "answers": [
-         {"answerText":"1,000.", "correct": true},
-         {"answerText":"10,000.", "correct": false},
-         {"answerText":"A lot", "correct": false}
+         {"answerText":"Mike", "correct": true},
+         {"answerText":"Frank", "correct": false}
          ]},
-       {"questionText": "What is the default program?",
+       {"questionText": "Benjamin is lighter than Peter, who is the heaviest ?",
         "answers": [
-         {"answerText":"Hello World.", "correct": true},
-         {"answerText":"Hello Sunshine.", "correct": false},
-         {"answerText":"Hello my ragtime gal.", "correct": false}
-         ]}
+         {"answerText":"Benjamin", "correct": true},
+         {"answerText":"Peter", "correct": false}
+       ]},
+       {"questionText": "Lilly is more than Jane, who is less ?",
+        "answers": [
+         {"answerText":"Jane", "correct": true},
+         {"answerText":"Lilly", "correct": false}
+         ]},
+       {"questionText": "Brian is faster than Tim, who is the fastest ?",
+        "answers": [
+         {"answerText":"Brian", "correct": true},
+         {"answerText":"Tim", "correct": false}
+         ]},
+       {"questionText": "Mark is larger than Jack, who is the largest ?",
+        "answers": [
+         {"answerText":"Mark", "correct": true},
+         {"answerText":"Jack", "correct": false}
+         ]},
+       {"questionText": "Juliana is shorter than Bettina, who is the tallest ?",
+        "answers": [
+         {"answerText":"Juliana", "correct": true},
+         {"answerText":"Bettina", "correct": false}
+       ]},
+       {"questionText": "Maya is worse than June, who is the best ?",
+        "answers": [
+         {"answerText":"Maya", "correct": true},
+         {"answerText":"June", "correct": false}
+         ]},
+       {"questionText": "Lisa is faster than Bree, who is the slowest ?",
+        "answers": [
+         {"answerText":"Lisa", "correct": true},
+         {"answerText":"Bree", "correct": false}
+         ]},
+       {"questionText": "11.Daffy is poorer than Frank, who is the richest ?",
+        "answers": [
+         {"answerText":"Daffy", "correct": true},
+         {"answerText":"Frank", "correct": false}
+         ]},
+       {"questionText": "12.Jane is happier than Fanny, who is the saddest ?",
+        "answers": [
+         {"answerText":"Fanny", "correct": true},
+         {"answerText":"Jane", "correct": false}
+       ]},
+       {"questionText": "13.Daniel is smaller than Michael, who is the largest ?",
+        "answers": [
+         {"answerText":"Michael	", "correct": true},
+         {"answerText":"Daniel", "correct": false}
+         ]},
+       {"questionText": "14.Jacob is better than Jim, who is the best ?",
+        "answers": [
+         {"answerText":"Jacob", "correct": true},
+         {"answerText":"Jim", "correct": false}
+         ]},
+       {"questionText": "15.Tim is taller than Jim, who is the shortest ?",
+        "answers": [
+         {"answerText":"Jim", "correct": true},
+         {"answerText":"Tim", "correct": false}
+        ]}
     ]},
-    {"exam": "test4",
-     "ins": "asdasda",
+    {"exam": "Data Checking",
+     "ins": "You are presented with two addresses or invoices. You have to determine whether the two displayed addresses or invoices are exactly the same or different",
      "questions": [
        {"questionText": "(test4)Why is the sky blue?",
         "answers": [
@@ -128,14 +361,16 @@ angular.module('ngmaterialApp')
   $scope.exam = $scope.clerical[0].exam;
   $scope.ins = $scope.clerical[0].ins;
   $scope.questions = $scope.clerical[0].questions;
+  $scope.allAnf = $scope.clerical[0].questions.length;
+  $scope.allAd = $scope.clerical[1].questions.length;
+  $scope.allWc = $scope.clerical[2].questions.length;
+  $scope.allDc = $scope.clerical[3].questions.length;
 
   $scope.gotoTest = function() {
       $scope.testID++;
       $scope.getTest();
       $scope.instruction = false;
       $scope.nextTest = false;
-
-
   };
 
   $scope.getTest = function() {
@@ -144,8 +379,7 @@ angular.module('ngmaterialApp')
       $scope.exam = $scope.clerical[y].exam;
       $scope.ins = $scope.clerical[y].ins;
       $scope.questions = $scope.clerical[y].questions;
-    }
-    else {
+    }else {
       $scope.all = true;
       $scope.result =  true;
     }
@@ -155,12 +389,12 @@ angular.module('ngmaterialApp')
   $scope.nextTest = false;
   $scope.result =  false;
 
-  $scope.correctTest1 = 0;
-  $scope.correctTest2 = 0;
-  $scope.correctTest3 = 0;
+  $scope.anf = 0;
+  $scope.ad = 0;
+  $scope.wc = 0;
+  $scope.dc = 0;
 
-
-  $scope.begin = function(){
+  $scope.begin = function() {
       $scope.id = 0;
       $scope.getQuestion();
       $scope.instruction = true;
@@ -177,26 +411,27 @@ angular.module('ngmaterialApp')
       $scope.question = $scope.questions[i];
       if (i >= $scope.questions.length) {
 				$scope.nextTest = true;
-      }
+        }
       };
 
-  $scope.answers ={};
+  $scope.answers = {};
   $scope.getCorrect = function() {
     var i = $scope.id;
     $scope.main = $scope.questions[i];
       var array = $scope.main.answers;
       $scope.main.userAnswer = $scope.answers.undefined;
-      for(var j=0;j<array.length;j++){
+      for(var j=0;j<array.length;j++) {
         if ($scope.main.userAnswer === array[j].answerText && array[j].correct === true) {
           var y = $scope.testID;
           if (y == 0) {
-            $scope.correctTest1++;
+            $scope.anf++;
           }else if (y == 1) {
-            $scope.correctTest2++;
+            $scope.ad++;
           }else if (y == 2) {
-            $scope.correctTest3++;
+            $scope.wc++;
+          }else if (y == 3) {
+            $scope.dc++;
           }
-
         }
       }
    };
