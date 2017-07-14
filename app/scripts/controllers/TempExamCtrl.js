@@ -361,6 +361,7 @@ angular.module('ngmaterialApp')
          ]}
     ]}
   ];
+
   $scope.testID = 0;
   $scope.exam = $scope.clerical[0].exam;
   $scope.ins = $scope.clerical[0].ins;
@@ -379,20 +380,10 @@ angular.module('ngmaterialApp')
 
   $scope.getTest = function() {
     var y = $scope.testID;
-    var anf = $scope.anf;
-    var ad = $scope.ad;
     if (y < $scope.clerical.length) {
-      if (y <= 1) {
-        if (anf <= 5 || ad <= 5) {
           $scope.exam = $scope.clerical[y].exam;
           $scope.ins = $scope.clerical[y].ins;
           $scope.questions = $scope.clerical[y].questions;
-        }
-      } else {
-          $scope.exam = $scope.clerical[y].exam;
-          $scope.ins = $scope.clerical[y].ins;
-          $scope.questions = $scope.clerical[y].questions;
-      }
     }else {
       $scope.all = true;
       $scope.result =  true;

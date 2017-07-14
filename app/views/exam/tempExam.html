@@ -16,12 +16,8 @@
             <p>{{id + 1}}) {{question.questionText}}</p>
             <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
             <hr>
-            <div  ng-repeat="answer in question.answers">
-              <div class="row">
-                <div class="col-md-3">
-                  <md-button ng-model="answers[$parent.$index]" ng-click="next()" button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}</md-button>
-                </div>
-              </div>
+            <div ng-repeat="answer in question.answers">
+                  <md-button ng-model="answers[$parent.$index]" ng-click="next()" button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> &#8227;&nbsp;{{ answer.answerText }}</md-button>
             </div>
           </div>
           </md-card>
