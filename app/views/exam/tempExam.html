@@ -1,5 +1,5 @@
 <div class="container">
-  <md-card style="background-color: #f5f5f5;"> 
+  <md-card style="background-color: #f5f5f5;">
     <div ng-hide="all">
       <h3 align="center">{{exam}}</h3>
       <div class="container-fluid" ng-hide="instruction">
@@ -16,12 +16,13 @@
             <p>{{id + 1}}) {{question.questionText}}</p>
             <div ng-repeat="question in question.questionSub">{{question.questionText1}}</div>
             <hr>
-            <div ng-repeat="answer in question.answers">
-              <md-radio-group ng-model="answers[$parent.$index]" ng-click="next()">
-              <md-radio-button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}
-              </md-radio-button>
-              </md-radio-group>
-		        </div>
+            <div  ng-repeat="answer in question.answers">
+              <div class="row">
+                <div class="col-md-3">
+                  <md-button ng-model="answers[$parent.$index]" ng-click="next()" button value="{{ answer.answerText }}" name="quest_{{$parent.$index}}_answers" /> {{ answer.answerText }}</md-button>
+                </div>
+              </div>
+            </div>
           </div>
           </md-card>
         </div>
@@ -38,19 +39,19 @@
        <table padding="5px">
          <tr>
            <td>Alphabetical and Numerical Filing: </td>
-           <td> {{anf}}/{{allAnf}}</td>
+           <td>&nbsp;&nbsp;{{anf}}/{{allAnf}}</td>
          </tr>
          <tr>
            <td>Attention to Detail: </td>
-           <td> {{ad}}/{{allAd}}</td>
+           <td>&nbsp;&nbsp;{{ad}}/{{allAd}}</td>
          </tr>
          <tr>
            <td>Workload/Concentration: </td>
-           <td> {{wc}}/{{allWc}}</td>
+           <td>&nbsp;&nbsp;{{wc}}/{{allWc}}</td>
          </tr>
          <tr>
            <td>Data Checking: </td>
-           <td> {{dc}}/{{allDc}}<td>
+           <td>&nbsp;&nbsp;{{dc}}/{{allDc}}<td>
        </table>
     </center>
    </div>

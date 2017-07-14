@@ -331,29 +331,33 @@ angular.module('ngmaterialApp')
     {"exam": "Data Checking",
      "ins": "You are presented with two addresses or invoices. You have to determine whether the two displayed addresses or invoices are exactly the same or different",
      "questions": [
-       {"questionText": "(test4)Why is the sky blue?",
+       {"questionText": "Question 1?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"answer 1", "correct": true},
+         {"answerText":"answer 2", "correct": false},
+         {"answerText":"answer 3", "correct": false},
+         {"answerText":"answer 4", "correct": false}
          ]},
-       {"questionText": "Why is the meaning of life?",
+       {"questionText": "Question 2?",
         "answers": [
-         {"answerText":"blah blah 1", "correct": true},
-         {"answerText":"blah blah 2", "correct": false},
-         {"answerText":"blah blah 3", "correct": false}
+         {"answerText":"answer 1", "correct": true},
+         {"answerText":"answer 2", "correct": false},
+         {"answerText":"answer 3", "correct": false},
+         {"answerText":"answer 4", "correct": false}
          ]},
-       {"questionText": "How many pennies are in $10.00?",
+       {"questionText": "Question 3?",
         "answers": [
-         {"answerText":"1,000.", "correct": true},
-         {"answerText":"10,000.", "correct": false},
-         {"answerText":"A lot", "correct": false}
+         {"answerText":"answer 1", "correct": true},
+         {"answerText":"answer 2", "correct": false},
+         {"answerText":"answer 3", "correct": false},
+         {"answerText":"answer 4", "correct": false}
          ]},
-       {"questionText": "What is the default program?",
+       {"questionText": "Question 4?",
         "answers": [
-         {"answerText":"Hello World.", "correct": true},
-         {"answerText":"Hello Sunshine.", "correct": false},
-         {"answerText":"Hello my ragtime gal.", "correct": false}
+         {"answerText":"answer 1", "correct": true},
+         {"answerText":"answer 2", "correct": false},
+         {"answerText":"answer 3", "correct": false},
+         {"answerText":"answer 4", "correct": false}
          ]}
     ]}
   ];
@@ -375,10 +379,20 @@ angular.module('ngmaterialApp')
 
   $scope.getTest = function() {
     var y = $scope.testID;
+    var anf = $scope.anf;
+    var ad = $scope.ad;
     if (y < $scope.clerical.length) {
-      $scope.exam = $scope.clerical[y].exam;
-      $scope.ins = $scope.clerical[y].ins;
-      $scope.questions = $scope.clerical[y].questions;
+      if (y <= 1) {
+        if (anf <= 5 || ad <= 5) {
+          $scope.exam = $scope.clerical[y].exam;
+          $scope.ins = $scope.clerical[y].ins;
+          $scope.questions = $scope.clerical[y].questions;
+        }
+      } else {
+          $scope.exam = $scope.clerical[y].exam;
+          $scope.ins = $scope.clerical[y].ins;
+          $scope.questions = $scope.clerical[y].questions;
+      }
     }else {
       $scope.all = true;
       $scope.result =  true;
